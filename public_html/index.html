@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Альбом студентов второго ШРИ в Москве</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div>
+            <div id="menu">
+                <ul>
+                    <li><a href="#about">О ШРИ</a></li>
+                    <li><a href="#students">Студенты</a></li>
+                    <li><a href="#lections">Лекции</a></li>
+                </ul>
+            </div>
+            <div id="about">
+                ABOUT SHRI
+            </div>
+            <div id="students">
+            </div>
+            <div id="lections">
+                LECTIONS LIST
+            </div>
+        </div>
+        <script type="text/javascript" src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/mustache.js-0.7.0/mustache.min.js"></script>
+        <script type="text/javascript">
+            var students = {
+                students: [
+                    {
+                        "id": "1",
+                        "Timestamp": "9/28/2013 2:51:14",
+                        "name": "Никита Попов",
+                        "city": "Санкт-Петербург",
+                        "about": "О себе о себе о себе",
+                        "link_photo": "cs408530.vk.me/v408530792/1e45/XISCuQa83W4.jpg",
+                        "link_facebook": "facebook.com/popov.nikita",
+                        "link_vk": "vk.com/nikita.v.popov",
+                        "link_gihub": "github.com/losnikitos",
+                        "link_yaru": "losnikitos123.ya.ru"
+                    },
+                    {
+                        "id": "2",
+                        "Timestamp": "9/28/2013 2:51:14",
+                        "name": "Саша Иванов",
+                        "city": "Санкт-Петербург",
+                        "about": "Саша Иванов",
+                        "link_photo": "cs408530.vk.me/v408530792/1e45/XISCuQa83W4.jpg",
+                        "link_facebook": "facebook.com/popov.nikita",
+                        "link_vk": "vk.com/nikita.v.popov",
+                        "link_gihub": "github.com/losnikitos",
+                        "link_yaru": "losnikitos123.ya.ru"
+                    }
+                ]
+            };
+            
+            // Шаблон для студентов
+            var student_temlate = '<h1>Студенты</h1>\n\
+                    {{#students}}<div id="student_{{id}}"><h2>{{name}}</h2>\n\
+                    <img src="http://{{link_photo}}"/><p>{{{about}}}</p>\n\
+                    <p>Профили:</p><ul>\n\
+                    {{#link_facebook}}<li><a href="http://{{link_facebook}}">Facebook</a></li>{{/link_facebook}}\n\
+                    {{#link_vk}}<li><a href="http://{{link_vk}}">VK</a></li>{{/link_vk}}\n\
+                    {{#link_gihub}}<li><a href="http://{{link_gihub}}">Github</a></li>{{/link_gihub}}\n\
+                    {{#link_yaru}}<li><a href="http://{{link_yaru}}">ya.ru</a></li>{{/link_yaru}}\n\
+                    </ul></div>{{/students}}';
+            var students_render = Mustache.compile(student_temlate);
+            var html = students_render(students);
+
+            $("#students").append(html);
+        </script>
+    </body>
+</html>
