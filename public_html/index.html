@@ -3,13 +3,18 @@
     <head>
         <title>Альбом студентов второго ШРИ в Москве</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/jquery-ui.css"/>
+        <link rel="stylesheet" href="css/main.css"/>
     </head>
     <body>
         <div>
-            <div id="menu">
-                <ul>
+            <div>
+                <ul id="menu">
                     <li><a href="#about">О ШРИ</a></li>
-                    <li><a href="#students">Студенты</a></li>
+                    <li><a href="#students">Студенты</a>
+                        <ul id="students_menu">
+                        </ul>
+                    </li>
                     <li><a href="#lections">Лекции</a></li>
                 </ul>
             </div>
@@ -24,6 +29,7 @@
         </div>
         <script type="text/javascript" src="js/libs/jquery-1.9.0/jquery.min.js"></script>
         <script type="text/javascript" src="js/libs/mustache.js-0.7.0/mustache.min.js"></script>
+        <script type="text/javascript" src="js/libs/jqueryui-1.10.0/jquery-ui.min.js"></script>
         <script type="text/javascript">
             var students = {
                 students: [
@@ -53,9 +59,9 @@
                     }
                 ]
             };
-            
-            // Шаблон для студентов
-            var student_temlate = '<h1>Студенты</h1>\n\
+            $(document).ready(function() {
+                // Шаблон для студентов
+                var student_temlate = '<h1>Студенты</h1>\n\
                     {{#students}}<div id="student_{{id}}"><h2>{{name}}</h2>\n\
                     <img src="http://{{link_photo}}"/><p>{{{about}}}</p>\n\
                     <p>Профили:</p><ul>\n\
@@ -64,10 +70,13 @@
                     {{#link_gihub}}<li><a href="http://{{link_gihub}}">Github</a></li>{{/link_gihub}}\n\
                     {{#link_yaru}}<li><a href="http://{{link_yaru}}">ya.ru</a></li>{{/link_yaru}}\n\
                     </ul></div>{{/students}}';
-            var students_render = Mustache.compile(student_temlate);
-            var html = students_render(students);
-
-            $("#students").append(html);
+                var students_render = Mustache.compile(student_temlate);
+                var students_html = students_render(students);
+                $("#students").append(students_html);
+                var student_menu = '{{#students}}<li><a href="#student_{{id}}">{{name}}</a></li>{{/students}}';
+                $("#students_menu").append(Mustache.to_html(student_menu, students));
+                $("#menu").menu();
+            });
         </script>
     </body>
 </html>
