@@ -7,17 +7,12 @@
         <link rel="stylesheet" href="css/main.css"/>
     </head>
     <body>
-        <div>
-            <div>
-                <ul id="menu">
-                    <li><a href="#about">О ШРИ</a></li>
-                    <li><a href="#students">Студенты</a>
-                        <ul id="students_menu">
-                        </ul>
-                    </li>
-                    <li><a href="#lections">Лекции</a></li>
-                </ul>
-            </div>
+        <div id="content">
+            <ul>
+                <li><a href="#about">О ШРИ</a></li>
+                <li><a href="#students">Студенты</a></li>
+                <li><a href="#lections">Лекции</a></li>
+            </ul>
             <div id="about">
                 ABOUT SHRI
             </div>
@@ -73,9 +68,9 @@
                 var students_render = Mustache.compile(student_temlate);
                 var students_html = students_render(students);
                 $("#students").append(students_html);
-                var student_menu = '{{#students}}<li><a href="#student_{{id}}">{{name}}</a></li>{{/students}}';
-                $("#students_menu").append(Mustache.to_html(student_menu, students));
-                $("#menu").menu();
+                $("#content").tabs();
+                // var student_menu = '{{#students}}<li><a href="#student_{{id}}">{{name}}</a></li>{{/students}}';
+                // $("#students_menu").append(Mustache.to_html(student_menu, students));
             });
         </script>
     </body>
