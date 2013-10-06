@@ -3,12 +3,16 @@
     <head>
         <title>Альбом студентов второго ШРИ в Москве</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/jquery-ui.css"/>
-        <link rel="stylesheet" href="css/jquery.ui.theme.css"/>
-        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="css/jquery-ui.css" type="text/css"/>
+        <link rel="stylesheet" href="css/jquery.ui.theme.css" type="text/css"/>
+        <link rel="stylesheet" href="css/main.css" type="text/css"/>
     </head>
     <body>
-        <div id="content" class="ui-corner-all">
+        <div id="header" class="ui-corner-top">
+            <img src="css/images/shri-logo.svg"/>
+            <h1>Школа разработки интерфейсов</h1>
+        </div>
+        <div id="content">
             <ul>
                 <li><a href="#about">О ШРИ</a></li>
                 <li><a href="#students">Студенты</a></li>
@@ -48,6 +52,9 @@
                 </table>
             </div>
         </div>
+        <div id="footer">
+
+        </div>
         <script type="text/javascript" src="js/libs/jquery-1.9.0/jquery.min.js"></script>
         <script type="text/javascript" src="js/libs/mustache.js-0.7.0/mustache.min.js"></script>
         <script type="text/javascript" src="js/libs/jqueryui-1.10.0/jquery-ui.min.js"></script>
@@ -65,7 +72,7 @@
                         {{#link_yaru}}<li><a href="{{link_yaru}}">ya.ru</a></li>{{/link_yaru}}\n\
                         </ul></div>{{/students}}';
                     var renderer = Mustache.compile(temlate);
-                    return renderer(loadStudents());
+                    return renderer(students.prepare());
                 });
                 $("#lectures").find("tbody").append(function() {
                     var lecture_template = '{{#lectures}}<tr>\n\
