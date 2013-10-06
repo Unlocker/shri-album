@@ -12,7 +12,7 @@
             <ul>
                 <li><a href="#about">О ШРИ</a></li>
                 <li><a href="#students">Студенты</a></li>
-                <li><a href="#lections">Лекции</a></li>
+                <li><a href="#lectures">Лекции</a></li>
             </ul>
             <div id="about">
                 <p>
@@ -36,7 +36,7 @@
             <div id="students">
             </div>
             <div id="lectures">
-                <table style="border: solid black 1px">
+                <table>
                     <thead>
                         <tr>
                             <th>Дата</th>
@@ -54,7 +54,7 @@
         <script type="text/javascript" src="js/students.js"></script>
         <script type="text/javascript" src="js/lectures.js"></script>
         <script type="text/javascript">
-            $(document).ready(function() {
+            $(function() {
                 $("#students").append(function() {
                     var temlate = '{{#students}}<h3>{{last_name}} {{first_name}}</h3><div id="student_{{id}}">\n\
                         <img src="{{link_photo}}"/><p>{{{about}}}</p>\n\
@@ -75,11 +75,13 @@
                     var renderer = Mustache.compile(lecture_template);
                     return renderer(lectures);
                 });
-                $("#content").tabs();
-                $("#students").accordion({
+
+                var accordion = $("#students").accordion({
                     heightStyle: "content",
+                    active: "false",
                     collapsible: "true"
                 });
+                var tabs = $("#content").tabs();
                 // var student_menu = '{{#students}}<li><a href="#student_{{id}}">{{name}}</a></li>{{/students}}';
                 // $("#students_menu").append(Mustache.to_html(student_menu, students));
             });
