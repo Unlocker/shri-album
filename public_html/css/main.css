@@ -1,7 +1,7 @@
 body{
-    padding-top: 2em;
-    padding-left: 6em;
-    padding-right: 6em;
+    padding-top: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
     background-color:#def;
     background-image: radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%),
         radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%);
@@ -16,10 +16,13 @@ body{
 #header {
     position: relative;
     top: 0;
-    width: 100%;
     height: 6em;
     background-color: white;
     background: linear-gradient(to top right, #ffffff, #4297d7);
+    border-style: solid;
+    border-bottom: none;
+    border-color: #4297d7;
+    border-width: 2px;
 }
 
 #header img{
@@ -28,14 +31,57 @@ body{
 }
 
 #header h1{
-    font-family: sans-serif;
+    font-family: Courier New, monospace;
     font-size: xx-large;
     position: relative;
-    top: 35%;
-    left: 15%;
+    top: 15%;
+    left: 25%;
 }
 
 #header h1:first-letter{
     color: red;
 }
 
+#content{
+    border-style: solid;
+    border-top: none;
+    border-bottom: none;
+    border-color: #4297d7;
+    border-width: 2px;
+    border-radius: 0;
+}
+
+#footer{
+    position: relative;
+    bottom: 0;
+    height: 3em;
+    background-color: #fff;
+    background: linear-gradient(to bottom left, #ffffff, #4297d7);
+    border-style: solid;
+    border-top: none;
+    border-color: #4297d7;
+    border-width: 2px;
+}
+
+#footer table {
+    width: 100%;
+    height: 100%;
+    font-family: Courier New, monospace;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#footer .footer__logo{
+    width: 85%;
+}
+
+#footer td a{
+    font-size: x-large;
+    color: black;
+}
+
+.footer__data {
+    font-size: smaller;
+    font-style: italic;
+}
