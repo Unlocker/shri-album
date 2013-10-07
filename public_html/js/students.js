@@ -318,14 +318,14 @@ var students = {
                     "link_gihub": "https://github.com/vasyan",
                     "link_yaru": "http://vasilyator9000.ya.ru/"
                 }
-            ]
-};
-/*
- * Дополняет данные о студентах.
- */
-var loadStudents = function() {
-    for (var i = 0; i < students.students.length; i++) {
-        students.students[i].id = i;
+            ],
+    /*
+     * Дополняет данные о студентах.
+     */
+    prepare: function() {
+        for (var i = 0; i < students.students.length; i++) {
+            students.students[i].id = i;
+        }
+        return students;
     }
-    return students;
 };

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="137.84117"
+   height="53.593269"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="shri-logo.svg">
+  <title
+     id="title4023">shri-logo</title>
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient4013">
+      <stop
+         id="stop4021"
+         offset="0"
+         style="stop-color:#bfbfbf;stop-opacity:1;" />
+      <stop
+         style="stop-color:#ececec;stop-opacity:1;"
+         offset="1"
+         id="stop4017" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3784"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#fffb09;stop-opacity:1;"
+         offset="0"
+         id="stop3786" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3765"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#0000ff;stop-opacity:1;"
+         offset="0"
+         id="stop3767" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4013"
+       id="linearGradient4019"
+       x1="141.51321"
+       y1="63.874638"
+       x2="175.2382"
+       y2="63.874638"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-58.568543,-36.365491)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="22.4"
+     inkscape:cx="138.99202"
+     inkscape:cy="47.170859"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-grids="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="737"
+     inkscape:window-x="-2"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     showborder="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>shri-logo</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Фон"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline"
+     transform="translate(-1.0101507,-0.75000528)">
+    <rect
+       style="fill:#ffcc0f;fill-opacity:0.94117647;fill-rule:evenodd;stroke:none"
+       id="rect3763"
+       width="118.18785"
+       height="53.538086"
+       x="1.0101507"
+       y="0.79338276"
+       ry="0" />
+    <g
+       id="g3003">
+      <path
+         transform="matrix(0.35135136,0,0,0.8278677,40.89383,-64.263895)"
+         inkscape:transform-center-y="-1.6725458"
+         inkscape:transform-center-x="-2.4907993"
+         d="m 278.8021,110.90001 -56.06347,32.36826 0,-64.736519 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="true"
+         sodipodi:arg2="1.0471976"
+         sodipodi:arg1="7.2668618e-09"
+         sodipodi:r2="17.792742"
+         sodipodi:r1="37.375645"
+         sodipodi:cy="110.90001"
+         sodipodi:cx="241.42645"
+         sodipodi:sides="3"
+         id="path3773"
+         style="fill:#ffcc0f;fill-opacity:0.94117647;stroke:none"
+         sodipodi:type="star" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="67.680222"
+       y="86.656349"
+       id="text3775"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3777"
+         x="67.680222"
+         y="86.656349" /></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#333333;stroke-width:0.93288714;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3782"
+       width="32.791996"
+       height="38.852909"
+       x="45.223305"
+       y="7.6512051" />
+    <rect
+       style="fill:url(#linearGradient4019);fill-opacity:1;stroke:#333333;stroke-width:0.93300003;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3782-1"
+       width="32.791996"
+       height="38.852909"
+       x="83.411163"
+       y="8.0826893"
+       ry="13.131983" />
+    <text
+       xml:space="preserve"
+       style="font-size:58.23418427px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New Bold"
+       x="3.9659531"
+       y="44.63287"
+       id="text3988"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0095732,0.99051758)"><tspan
+         sodipodi:role="line"
+         id="tspan3990"
+         x="3.9659531"
+         y="44.63287">Ш</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="48.771591"
+       y="37.468536"
+       id="text3992"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3994"
+         x="48.771591"
+         y="37.468536">Р</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="87.629517"
+       y="37.9711"
+       id="text3996"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3998"
+         x="87.629517"
+         y="37.9711">И</tspan></text>
+  </g>
+</svg>
