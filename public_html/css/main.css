@@ -56,7 +56,7 @@ body{
     bottom: 0;
     height: 3em;
     background-color: #fff;
-    background: linear-gradient(to bottom left, #ffffff, #4297d7);
+    background: linear-gradient(to bottom, #ffffff, #4297d7);
     border-style: solid;
     border-top: none;
     border-color: #4297d7;
