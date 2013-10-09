@@ -36,6 +36,7 @@
                     Практику ведут ведущие фронтенд-разработчики Яндекса, разрабатывающие интерфейсы для Поиска, Почты, 
                     Карт, Маркета и других сервисов Яндекса.
                 </p>
+                <div id="vk_groups"></div>
             </div>
             <div id="students">
             </div>
@@ -63,6 +64,7 @@
                 </tr>
             </table>
         </div>
+        <script type="text/javascript" src="http://vk.com/js/api/openapi.js"></script>
         <script type="text/javascript" src="js/libs/jquery-1.9.0/jquery.min.js"></script>
         <script type="text/javascript" src="js/libs/mustache.js-0.7.0/mustache.min.js"></script>
         <script type="text/javascript" src="js/libs/jqueryui-1.10.0/jquery-ui.min.js"></script>
@@ -70,6 +72,7 @@
         <script type="text/javascript" src="js/lectures.js"></script>
         <script type="text/javascript">
             $(function() {
+                VK.Widgets.Group("vk_groups", {mode: 2, width: "300", height: "400"}, 58259761);
                 $("#students").append(function() {
                     var temlate = '{{#students}}<h3>{{last_name}} {{first_name}}</h3><div id="student_{{id}}">\n\
                         <img src="{{link_photo}}"/><p>{{{about}}}</p>\n\
