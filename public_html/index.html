@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/jquery.ui.theme.css" type="text/css"/>
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
         <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/jquery.dataTables.css" type="text/css" />
         <link rel="stylesheet" href="css/main.css" type="text/css"/>
     </head>
     <body class="container">
@@ -89,6 +90,7 @@
         <script type="text/javascript" src="js/libs/jquery-1.9.0/jquery.min.js"></script>
         <script type="text/javascript" src="js/libs/mustache.js-0.7.0/mustache.min.js"></script>
         <script type="text/javascript" src="js/libs/jqueryui-1.10.0/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="js/students.js"></script>
         <script type="text/javascript" src="js/lectures.js"></script>
         <script type="text/javascript">
@@ -144,6 +146,36 @@
                         <td>{{lector}}</td></tr>{{/lectures}}';
                     var renderer = Mustache.compile(lecture_template);
                     return renderer(lectures);
+                });
+
+                $("#lectures").find("table").dataTable({
+                    oLanguage: {
+                        "sProcessing": "Подождите...",
+                        "sLengthMenu": "Показать _MENU_ записей",
+                        "sZeroRecords": "Записи отсутствуют.",
+                        "sInfo": "Записи с _START_ до _END_ из _TOTAL_ записей",
+                        "sInfoEmpty": "Записи с 0 до 0 из 0 записей",
+                        "sInfoFiltered": "(отфильтровано из _MAX_ записей)",
+                        "sInfoPostFix": "",
+                        "sSearch": "Поиск:",
+                        "sUrl": "",
+                        "oPaginate": {
+                            "sFirst": "Первая",
+                            "sPrevious": "Предыдущая",
+                            "sNext": "Следующая",
+                            "sLast": "Последняя"
+                        },
+                        "oAria": {
+                            "sSortAscending": ": активировать для сортировки столбца по возрастанию",
+                            "sSortDescending": ": активировать для сортировки столбцов по убыванию"
+                        }
+                    },
+                    "aoColumnDefs": [
+                        {"sType": "date", "aTargets": [0]}
+                    ],
+                    "sDom": "<'row'<'span8'l><'span8'f>r>t<'row'<'span8'i><'span8'p>>",
+                    "iDisplayLength": 20,
+                    "bLengthChange": false
                 });
 
                 var $tabs = $("#content").tabs();
