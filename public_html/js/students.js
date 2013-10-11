@@ -327,5 +327,28 @@ var students = {
             students.students[i].id = i;
         }
         return students;
+    },
+    getAllNames: function() {
+        var source = [];
+        for (var i = 0; i < students.students.length; i++) {
+            var current = students.students[i];
+            source[i] = current.last_name + " " + current.first_name;
+        }
+        return source;
+    },
+    /*
+     * Находит идентификатор студента по его имени
+     * @param name имя
+     * @returns идентификатор
+     */
+    findIdByName: function(name) {
+        for (var i = 0; i < students.students.length; i++) {
+            var current = students.students[i];
+            var curName = current.last_name + " " + current.first_name;
+            if (curName === name) {
+                return current.id;
+            }
+        }
+        return null;
     }
 };

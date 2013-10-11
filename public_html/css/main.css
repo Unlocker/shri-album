@@ -104,3 +104,11 @@ p {
     font-size: smaller;
     font-style: italic;
 }
+
+#students img{
+    max-width: 300px;
+}
+
+#students ul{
+    list-style: none;
+}
