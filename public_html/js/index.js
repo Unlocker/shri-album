@@ -1,5 +1,7 @@
 $(function() {
+    // Подцепляем виджет VK
     VK.Widgets.Group("vk_groups", {mode: 0, width: "300", height: "400"}, 58259761);
+    // Рендерим список студентов
     $("#students").append(function() {
         var temlate = '<div class="row"><div class="col-sm-3"><label for="students_search">Поиск студента:</label></div>\n\
                         <div class="col-sm-5"><input class="ui-autocomplete" id="students_search"></div></div>\n\
@@ -16,34 +18,9 @@ $(function() {
         var renderer = Mustache.compile(temlate);
         return renderer(students.prepare());
     });
-
-    var $accordion = $("#students_list").accordion({
-        heightStyle: "content",
-        active: "false",
-        collapsible: "true"
-    });
-
-    var $studentsSearch = $("#students_search").autocomplete({
-        source: students.getAllNames(),
-        change: function(event, ui) {
-            if (ui.item === null) {
-                $accordion.accordion({
-                    heightStyle: "content",
-                    active: "false",
-                    collapsible: "true"
-                });
-            } else {
-                var studId = students.findIdByName(ui.item.value);
-                $accordion.accordion({
-                    heightStyle: "content",
-                    active: studId,
-                    collapsible: "true"
-                });
-            }
-        }
-    });
-
-    $("#lectures").find("tbody").append(function() {
+    // Рендерим содержимое таблицы лекций и делаем виджет
+    var $lectures = $(document.getElementById(lectures));
+    $lectures.find("tbody").append(function() {
         var lecture_template = '{{#lectures}}<tr>\n\
                         <td>{{lec_date}}</td>\n\\n\
                         <td>{{topic}}</td>\n\\n\
@@ -52,7 +29,7 @@ $(function() {
         return renderer(lectures);
     });
 
-    $("#lectures").find("table").dataTable({
+    $lectures.find("table").dataTable({
         oLanguage: {
             "sProcessing": "Подождите...",
             "sLengthMenu": "Показать _MENU_ записей",
@@ -82,11 +59,48 @@ $(function() {
         "bLengthChange": false
     });
 
-    var $tabs = $("#content").tabs();
-    var url = document.URL;
-    if (/^.*#students?.*$/i.test(url)) {
-        $tabs.tabs({active: 1});
+    var chooseTab = function(url) {
+        var activeTab = 0;
+        if (/^.*#students?.*$/i.test(url)) {
+            activeTab = 1;
+        } else if (/^.*#lectures$/i.test(url)) {
+            activeTab = 2;
+        }
+        $("#content").tabs({active: activeTab});
+    };
+
+    var chooseAccordion = function(activeAcc) {
+        if (activeAcc === null) {
+            activeAcc = false;
+        }
+        $("#students_list").accordion({
+            heightStyle: "content",
+            active: activeAcc,
+            collapsible: "true"
+        });
+    };
+
+    $("#students_search").autocomplete({
+        source: students.getAllNames(),
+        change: function(event, ui) {
+            if (ui.item === null) {
+                chooseAccordion(null);
+            } else {
+                var studId = students.findIdByName(ui.item.value);
+                chooseAccordion(studId);
+            }
+        },
+        select: function(event, ui) {
+            var studId = students.findIdByName(ui.item.value);
+            chooseAccordion(studId);
+        }
+    });
+
+    chooseTab(document.URL);
+    var studId = /^.*#student_(\d+)$/i.exec(document.URL);
+    if (studId !== null) {
+        chooseAccordion(parseInt(studId[1]));
+    } else {
+        chooseAccordion(null);
     }
-    // var student_menu = '{{#students}}<li><a href="#student_{{id}}">{{name}}</a></li>{{/students}}';
-    // $("#students_menu").append(Mustache.to_html(student_menu, students));
 });

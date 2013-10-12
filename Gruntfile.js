@@ -1,25 +1,24 @@
 module.exports = function(grunt) {
 
-  // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     clean: ['build'],
     uglify: {
       build: {
-        src: 'public_html/js/index.js',
+        src: ['public_html/js/index.js'],
         dest: 'build/index.js'
-        }
+      }
     },
     concat: {
-		options: {
-			separator: ';',
-			banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-		},
 		js: {
+			options: {
+				separator: ';\n',
+			},
 			src: [
 				'public_html/js/libs/jquery-1.9.0/jquery.min.js', 
 				'public_html/js/libs/jqueryui-1.10.0/jquery-ui.min.js', 
 				'public_html/js/jquery.dataTables.min.js',
+				'public_html/js/libs/mustache.js-0.7.0/mustache.min.js',
 				'build/index.js'
 			],
 			dest: 'build/index.bundle.js'
@@ -54,6 +53,12 @@ module.exports = function(grunt) {
 					dest: 'build/images/',
 					flatten: true,
 					expand: true
+				},
+				{
+					src: ['public_html/css/font/**'],
+					dest: 'build/font/',
+					flatten: true,
+					expand: true
 				}
 			]
 		}
@@ -64,8 +69,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-mustache-precompile');
 
-	grunt.registerTask('default', ['clean', 'uglify', 'concat', 'copy']);
-
+	grunt.registerTask(
+		'default', 
+		[
+			'clean', 
+			'uglify', 
+			'concat', 
+			'copy'
+		]
+	);
 };

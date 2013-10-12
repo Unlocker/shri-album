@@ -8,6 +8,7 @@
     "grunt-mustache-precompile": "~0.1.1",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-clean": "~0.5.0"
+    "grunt-contrib-clean": "~0.5.0",
+    "mustache": "~0.7.2"
   }
 }
