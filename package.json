@@ -1,0 +1,8 @@
+{
+  "name": "shri-album",
+  "version": "0.1.0",
+  "description": "Альбом студентов ШРИ (Москва, 2013)",
+  "devDependencies": {
+    "grunt": "~0.4.1"
+  }
+}
